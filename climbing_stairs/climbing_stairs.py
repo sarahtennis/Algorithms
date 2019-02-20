@@ -58,12 +58,6 @@ def climbing_stairs(n, cache=None):
   else:
     return climbing_stairs(n - 3) + climbing_stairs(n - 2) + climbing_stairs(n - 1)
 
-
-  
-  
-
-
-
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_stairs = int(sys.argv[1])
