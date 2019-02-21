@@ -1,5 +1,24 @@
 #!/usr/bin/python
 
+'''
+maximizing the value of a set of items you select that are constrained by total size/weight
+---INPUT---
+first:  row number
+second: weight/size of item (cost to place in knapsack)
+third:  value of item (benefit of picking up, nothing to do with knapsack size)
+
+---OUTPUT---
+Items to select: 2, 8, 10
+Total cost: 98
+Total value: 117
+
+1 42 81
+2 42 42
+3 68 56
+
+
+'''
+
 import sys
 from collections import namedtuple
 
