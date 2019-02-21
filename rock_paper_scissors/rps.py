@@ -13,8 +13,8 @@ permutation with replacement
 
 n = 2
 ['rock'] --> ['rock', 'rock'], ['rock', 'paper'], ['rock', 'scissors']
-['paper']
-['scissors']
+['paper'] --> ['paper', 'rock'], ['paper', 'paper'], ['paper', 'scissors']
+['scissors'] --> ['scissors', 'rock'], ['scissors', 'paper'], ['scissors', 'scissors']
 
 '''
 
