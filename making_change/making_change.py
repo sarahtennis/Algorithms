@@ -32,22 +32,40 @@ maximum number of coins for amount is amount (all pennies)
 35:     24
 '''
 
-def making_change(amount, denominations = [5, 10, 25, 50]):
+# 5 [2,3,5]
+# build cache ---> [0, 0, 0, 0]
+
+# def making_change(amount, denominations = [1, 5, 10, 25, 50]):
+#   denominations = sorted(denominations)
+
+#   cache = [0] * ((amount // denominations[0]) + 2)
+#   cache[0] = 1
+
+#   # loop through each coin
+#   for coin in denominations:
+#     # only increases at new "coin level"
+#     for j in range(coin, len(cache)):
+#       if j - coin >= 0:
+#         cache[j // coin + 2] = cache[j] + cache[j-coin]
+
+#   return cache.pop()
+
+  def making_change(amount, denominations = [5, 10, 25, 50]):
   # force at least one solution with pennies (handled if no penny in argument)
 
-  # store how to make previous change, all guaranteed 1 way with pennies
+   # store how to make previous change, all guaranteed 1 way with pennies
   cache = [1] * (amount + 1)
 
-  # remove 1 from denominations (already handled)
+   # remove 1 from denominations (already handled)
   denominations = list(filter(lambda x: x != 1, denominations))
 
-  # loop through each coin
+   # loop through each coin
   for i, coin in enumerate(denominations):
     # only increases at new "coin level"
     for j in range(coin, len(cache)):
       cache[j] = cache[j] + cache[j-coin]
 
-  return cache.pop()
+   return cache.pop()
 
 
 
