@@ -22,14 +22,15 @@ n = 2
 def rock_paper_scissors(n):
   # returns list of tuples instead of list of lists
   # return list(product(['rock', 'paper', 'scissors'], repeat = 2)
-  
+
   options = [['rock'], ['paper'], ['scissors']]
   output = [[]]
 
   while n > 0:
     replace = []
-    for current in output:
-      for j in range(3):
+    
+    for current in output: # rps(1) -> runs 1, rps(2) --> runs 1 + 3, rps(3) --> 1 + 3 + 9
+      for j in range(3): # runs summation 3^n + 3^n-1 + ... + 3^1 times
         replace.append(current + options[j])
 
     n -= 1
