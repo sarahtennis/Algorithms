@@ -24,6 +24,19 @@ from collections import namedtuple
 
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
+# read in items from file
+def generate_item_list(path):
+  
+  items = []
+  with open(path, 'r') as file:
+    for line in file:
+      values = line.split()
+      items.append(Item(int(values[0]), int(values[1]), int(values[2])))
+  
+  return items
+
+# print(generate_item_list('data/medium3.txt'))
+
 def knapsack_solver(items, capacity):
   pass
   
